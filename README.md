@@ -2,7 +2,7 @@
 
 This is a test exersice for a job interview.
 
-Time spent: 4h of development, another 2 hour of refactoring and unit test coveradge.
+Time spent: 4 hours of development, another 2 hour of refactoring and unit test coveradge.
 
 App uses [coinmarketcap API](https://coinmarketcap.com/api/) to fetch list of cryptocurencies.
 
