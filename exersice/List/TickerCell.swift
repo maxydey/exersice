@@ -17,14 +17,6 @@ class TickerCell: UITableViewCell {
     
     @IBOutlet weak var coinIconButton: UIButton!
     
-    override func awakeFromNib() {
-        
-    }
-    
-    @IBAction func imageTap(_ sender: Any) {
-        
-    }
-    
     
     private (set) open var disposeBag = CompositeDisposable()
     
