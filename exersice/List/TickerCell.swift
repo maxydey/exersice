@@ -19,6 +19,11 @@ class TickerCell: UITableViewCell {
     
     
     private (set) open var disposeBag = CompositeDisposable()
+    override func awakeFromNib() {
+        
+        coinIconButton.imageView?.contentMode = .scaleAspectFit
+
+    }
     
     open override func prepareForReuse() {
         super.prepareForReuse()

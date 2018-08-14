@@ -24,6 +24,9 @@ class TickersListViewController: UIViewController {
     }
     
     func  setupUI() {
+        
+        self.viewRespectsSystemMinimumLayoutMargins = false
+         
         viewModel.title.asObservable().bind(to: self.rx.title).disposed(by:viewModel.disposeBag)
         
         viewModel.globalData

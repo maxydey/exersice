@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,13 +14,15 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TickersListViewController" customModule="exersice" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-Yv-w7Q">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-Yv-w7Q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="0.0" bottom="8" trailing="0.0"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="fg3-JX-1Ur">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,32 +65,32 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TickerCell" rowHeight="82" id="KHB-hX-gl3" customClass="TickerCell" customModule="exersice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="TickerCell" rowHeight="82" id="KHB-hX-gl3" customClass="TickerCell" customModule="exersice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="82" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KHB-hX-gl3" id="oaS-lc-SMB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tai-w6-Kp1">
-                                                    <rect key="frame" x="15" y="11" width="345" height="62"/>
+                                                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tai-w6-Kp1">
+                                                    <rect key="frame" x="10" y="5" width="355" height="71.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ0-IT-11D">
-                                                            <rect key="frame" x="57" y="20.5" width="53" height="21"/>
+                                                            <rect key="frame" x="57" y="25.5" width="53" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ja-i7-cPj">
-                                                            <rect key="frame" x="298" y="20.5" width="32" height="21"/>
+                                                            <rect key="frame" x="308" y="25.5" width="32" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daX-0P-Qkt">
-                                                            <rect key="frame" x="15" y="15" width="32" height="32"/>
+                                                            <rect key="frame" x="15" y="15" width="32" height="41.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="32" id="oxn-vz-Sa9"/>
+                                                                <constraint firstAttribute="height" priority="999" constant="32" id="oxn-vz-Sa9"/>
                                                                 <constraint firstAttribute="width" constant="32" id="xfP-Zy-Jjg"/>
                                                             </constraints>
                                                             <state key="normal">
@@ -97,7 +98,7 @@
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0X-F1-3oS">
-                                                            <rect key="frame" x="115" y="20.5" width="35" height="21"/>
+                                                            <rect key="frame" x="115" y="25.5" width="35" height="21"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -116,15 +117,14 @@
                                                         <constraint firstAttribute="bottom" secondItem="daX-0P-Qkt" secondAttribute="bottom" constant="15" id="dBK-Ta-ch0"/>
                                                         <constraint firstItem="6Ja-i7-cPj" firstAttribute="centerY" secondItem="tai-w6-Kp1" secondAttribute="centerY" id="frZ-gK-ffS"/>
                                                         <constraint firstAttribute="trailing" secondItem="6Ja-i7-cPj" secondAttribute="trailing" constant="15" id="nfh-OF-l9A"/>
-                                                        <constraint firstItem="daX-0P-Qkt" firstAttribute="centerY" secondItem="tai-w6-Kp1" secondAttribute="centerY" id="ut2-Zn-pqo"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="tai-w6-Kp1" firstAttribute="leading" secondItem="oaS-lc-SMB" secondAttribute="leadingMargin" id="0N0-pW-18q"/>
-                                                <constraint firstItem="tai-w6-Kp1" firstAttribute="top" secondItem="oaS-lc-SMB" secondAttribute="topMargin" id="Tme-u1-flu"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tai-w6-Kp1" secondAttribute="bottom" priority="999" id="Too-zB-i76"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tai-w6-Kp1" secondAttribute="trailing" id="kag-h6-W6X"/>
+                                                <constraint firstItem="tai-w6-Kp1" firstAttribute="leading" secondItem="oaS-lc-SMB" secondAttribute="leading" constant="10" id="0N0-pW-18q"/>
+                                                <constraint firstItem="tai-w6-Kp1" firstAttribute="top" secondItem="oaS-lc-SMB" secondAttribute="top" constant="5" id="Tme-u1-flu"/>
+                                                <constraint firstAttribute="bottom" secondItem="tai-w6-Kp1" secondAttribute="bottom" constant="5" id="Too-zB-i76"/>
+                                                <constraint firstAttribute="trailing" secondItem="tai-w6-Kp1" secondAttribute="trailing" constant="10" id="kag-h6-W6X"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
@@ -140,12 +140,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Hgb-Yv-w7Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3tZ-8b-tOD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hgb-Yv-w7Q" secondAttribute="bottom" id="M8u-Jb-bFT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hgb-Yv-w7Q" secondAttribute="trailing" id="PDS-3p-hab"/>
-                            <constraint firstItem="Hgb-Yv-w7Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="awY-20-SGg"/>
+                            <constraint firstItem="Hgb-Yv-w7Q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3tZ-8b-tOD"/>
+                            <constraint firstAttribute="bottom" secondItem="Hgb-Yv-w7Q" secondAttribute="bottom" id="M8u-Jb-bFT"/>
+                            <constraint firstAttribute="trailing" secondItem="Hgb-Yv-w7Q" secondAttribute="trailing" id="PDS-3p-hab"/>
+                            <constraint firstItem="Hgb-Yv-w7Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="awY-20-SGg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="8Kp-V6-hbi"/>
                     <connections>
