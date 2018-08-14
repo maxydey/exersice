@@ -29,7 +29,10 @@ class TickersListViewModel : NSObject {
     private func loadTickers() -> Observable<Void> {
         loading.onNext(true)
         return networkService.getTickers()
-            .catchError{ _ in Single.just(Ticker.Batch()) }
+            .catchError{ _ in Single.just(Ticker.Batch())
+                
+//                showError(error)
+            }
             .asObservable()
             .map({ (batch) -> [Ticker] in
                 return batch.tickers.sorted(by: { (item1, item2) -> Bool in
@@ -69,5 +72,11 @@ class TickersListViewModel : NSObject {
         strongSelf.title.onNext(ticker.name )
         return .empty()
     }
+    
+    func showError(_ error:Error) {
+        let alertController = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+        viewController.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 

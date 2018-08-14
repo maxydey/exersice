@@ -48,9 +48,6 @@ struct Quote : Codable {
     }
 }
 
-
-
-
 struct Ticker: Codable {
     
     var id : Int = 0

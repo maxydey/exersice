@@ -17,12 +17,12 @@ class TickerViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Currency changes"
         setupUI()
     }
     func setupUI() {
         guard let eurQuote = ticker.eurQuote else { return }
         
+        self.navigationItem.title = "\(ticker.name)'s dynamics"
         
         hours1label.text = String(format: "%.1f%%", eurQuote.percentChange1h ?? 0.0)
         hours24Label.text = String(format: "%.1f%%", eurQuote.percentChange24h ?? 0.0)

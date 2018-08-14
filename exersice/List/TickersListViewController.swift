@@ -28,7 +28,7 @@ class TickersListViewController: UIViewController {
                 if let symbol = ticker.symbol {
                     cell.symbolLabel.text = "(\(symbol))"
                 }
-                cell.priceLabel.text =  String(format: "%.1f", ticker.usdQuote?.price ?? 0.0)
+                cell.priceLabel.text =  String(format: "$%.1f", ticker.usdQuote?.price ?? 0.0)
                 
                  cell.coinIconButton.rx.bind(to: self.viewModel.titleAction, input: ticker)
                 
