@@ -19,15 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-Yv-w7Q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-Yv-w7Q">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TickerCell" rowHeight="145" id="KHB-hX-gl3" customClass="TickerCell" customModule="exersice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="145"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TickerCell" rowHeight="82" id="KHB-hX-gl3" customClass="TickerCell" customModule="exersice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KHB-hX-gl3" id="oaS-lc-SMB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="144.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tai-w6-Kp1">
@@ -82,7 +82,7 @@
                                             <constraints>
                                                 <constraint firstItem="tai-w6-Kp1" firstAttribute="leading" secondItem="oaS-lc-SMB" secondAttribute="leadingMargin" id="0N0-pW-18q"/>
                                                 <constraint firstItem="tai-w6-Kp1" firstAttribute="top" secondItem="oaS-lc-SMB" secondAttribute="topMargin" id="Tme-u1-flu"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tai-w6-Kp1" secondAttribute="bottom" id="Too-zB-i76"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tai-w6-Kp1" secondAttribute="bottom" priority="999" id="Too-zB-i76"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tai-w6-Kp1" secondAttribute="trailing" id="kag-h6-W6X"/>
                                             </constraints>
                                         </tableViewCellContentView>
