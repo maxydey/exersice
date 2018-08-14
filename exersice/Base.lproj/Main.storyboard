@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="450.39999999999998" y="150.67466266866569"/>
         </scene>
-        <!--View Controller-->
+        <!--Ticker View Controller-->
         <scene sceneID="yDF-Eh-bZh">
             <objects>
-                <viewController id="oar-Ct-tYJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TickerViewController" id="oar-Ct-tYJ" customClass="TickerViewController" customModule="exersice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="auN-2L-l06">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +209,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ojp-xI-0yy" secondAttribute="trailing" id="7sZ-xH-PCb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qbp-Cd-RI6" secondAttribute="trailing" id="IpP-eH-dHu"/>
                                     <constraint firstAttribute="trailing" secondItem="afW-2a-VrA" secondAttribute="trailing" id="rIS-2m-LR2"/>
                                 </constraints>
                             </stackView>
@@ -221,6 +223,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A78-Vw-4yY"/>
                     </view>
+                    <connections>
+                        <outlet property="days7Label" destination="M0t-jj-fFb" id="tux-eN-JjZ"/>
+                        <outlet property="hours1label" destination="SC5-rm-vbU" id="BDw-rt-SJr"/>
+                        <outlet property="hours24Label" destination="Huh-RX-CsJ" id="aIb-mb-05l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNf-fq-vXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

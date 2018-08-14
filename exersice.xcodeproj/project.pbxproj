@@ -18,7 +18,7 @@
 		50EB78B02122CD09004ED4EC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB78AF2122CD09004ED4EC /* NetworkService.swift */; };
 		50EB78B22122D328004ED4EC /* TickersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB78B12122D328004ED4EC /* TickersListViewModel.swift */; };
 		50EB78B42122D652004ED4EC /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB78B32122D652004ED4EC /* TickerCell.swift */; };
-		50EB78B82122E85C004ED4EC /* DynamicksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB78B72122E85C004ED4EC /* DynamicksViewController.swift */; };
+		50EB78B82122E85C004ED4EC /* TickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB78B72122E85C004ED4EC /* TickerViewController.swift */; };
 		EA01B238163FE28401A3B452 /* Pods_exersice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF209C71B58C4A992ACA4650 /* Pods_exersice.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		50EB78AF2122CD09004ED4EC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		50EB78B12122D328004ED4EC /* TickersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersListViewModel.swift; sourceTree = "<group>"; };
 		50EB78B32122D652004ED4EC /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
-		50EB78B72122E85C004ED4EC /* DynamicksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicksViewController.swift; sourceTree = "<group>"; };
+		50EB78B72122E85C004ED4EC /* TickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerViewController.swift; sourceTree = "<group>"; };
 		56BD172F3A1059934E3D19DE /* Pods-exersice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exersice.release.xcconfig"; path = "Pods/Target Support Files/Pods-exersice/Pods-exersice.release.xcconfig"; sourceTree = "<group>"; };
 		AF209C71B58C4A992ACA4650 /* Pods_exersice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_exersice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,7 +156,7 @@
 		50EB78B62122E824004ED4EC /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				50EB78B72122E85C004ED4EC /* DynamicksViewController.swift */,
+				50EB78B72122E85C004ED4EC /* TickerViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 			files = (
 				50EB78B02122CD09004ED4EC /* NetworkService.swift in Sources */,
 				50EB78AE2122CA8B004ED4EC /* CoinMarketAPI.swift in Sources */,
-				50EB78B82122E85C004ED4EC /* DynamicksViewController.swift in Sources */,
+				50EB78B82122E85C004ED4EC /* TickerViewController.swift in Sources */,
 				50EB78B22122D328004ED4EC /* TickersListViewModel.swift in Sources */,
 				50EB788C2122C095004ED4EC /* TickersListViewController.swift in Sources */,
 				50EB78AB2122C718004ED4EC /* Ticker.swift in Sources */,

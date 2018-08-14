@@ -30,7 +30,7 @@ import Foundation
 
 struct Quote : Codable {
     
-    var price : Double?
+    var price : Double
     var volume24h : Double?
     var marketCap : Double?
     var percentChange1h : Double?
