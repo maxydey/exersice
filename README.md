@@ -1,6 +1,6 @@
 # Coinmarketcap sample app
 
-This is a test exersice for a job interview [coinmarketcap API](https://coinmarketcap.com/api/)
+This is a test exersice for a job interview.
 Time spent: 4h of development, another 2 hour of refactoring and unit test coveradge
 App uses [coinmarketcap API](https://coinmarketcap.com/api/) to fetch list of cryptocurencies
 App is written using  [RxSwift](https://github.com/ReactiveX/RxSwift)
