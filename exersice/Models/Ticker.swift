@@ -30,42 +30,87 @@ import Foundation
 
 struct Quote : Codable {
     
-    var name : String?
-//    var price : Double?
-//    var volume24h : Double?
-//    var marketCap : Double?
-//    var percentChange1h : Double?
-//    var percentChange24h : Double?
-//    var percentChange7d : Double?
+    var price : Double?
+    var volume24h : Double?
+    var marketCap : Double?
+    var percentChange1h : Double?
+    var percentChange24h : Double?
+    var percentChange7d : Double?
     
     enum CodingKeys: String, CodingKey {
-        case name
+        
+        case price
+        case volume24h = "volume_24h"
+        case marketCap = "market_cap"
+        case percentChange1h = "percent_change_1h"
+        case percentChange24h = "percent_change_24h"
+        case percentChange7d = "percent_change_7d"
     }
 }
 
+
+
+
 struct Ticker: Codable {
     
-    var id : Int?
-    var name : String?
+    var id : Int = 0
+    var name : String
     var symbol : String?
-    var websiteSlug : String?
-    var rank : Int?
-    var circulatingSupply : Double?
-    var totalSuply : Double?
-    var maxSuply : Double?
     var quotes : [Quote]?
-    var lastUpaded: Date?
+    var usdQuote: Quote?
+    var eurQuote: Quote?
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case symbol
-        case websiteSlug = "website_slug"
-        case rank
-        case circulatingSupply = "circulating_supply"
-        case totalSuply = "total_supply"
-        case maxSuply = "max_supply"
         case quotes
-        case lastUpaded = "last_updated"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        symbol = try? container.decode(String.self, forKey: .symbol)
+        
+        if let dictionary: [String: Quote] = try? container.decode([String: Quote].self, forKey: .quotes) {
+            for key in dictionary.keys {
+                if key == "USD", let quote = dictionary[key] {
+                    usdQuote = quote
+                }
+                if key == "EUR", let quote = dictionary[key] {
+                    eurQuote = quote
+                }
+            }
+        }
     }
 }
+
+extension Ticker {
+    
+    struct Batch: Codable {
+        
+        var tickers: [Ticker] = []
+        
+        init() {}
+        
+        enum CodingKeys: String, CodingKey {
+            case tickers = "data"
+        }
+        
+        init(from decoder:Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            if let dictionary: [String: Ticker] = try? container.decode([String: Ticker].self, forKey: .tickers) {
+                for key in dictionary.keys {
+                    if let ticker = dictionary[key] {
+                        tickers.append(ticker)
+                    }
+                }
+            }
+        }
+    }
+}
+
+
