@@ -20,7 +20,7 @@ extension CoinMarketAPI: TargetType {
     var baseURL:URL {
         switch self {
         case .getImage:
-            return  URL(string: "https://s2.coinmarketcap.com/static/img/coins/128x128/")!
+            return  URL(string: "https://s2.coinmarketcap.com/static/img/coins/128x128")!
         default:
             return URL(string: "https://api.coinmarketcap.com/v2")!
         }

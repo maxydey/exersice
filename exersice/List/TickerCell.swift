@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class TickerCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!
-    @IBOutlet weak var priceLAbel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var coinIconButton: UIButton!
     
@@ -23,4 +24,18 @@ class TickerCell: UITableViewCell {
     @IBAction func imageTap(_ sender: Any) {
         
     }
+    
+    
+    private (set) open var disposeBag = CompositeDisposable()
+    
+    open override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag.dispose()
+        disposeBag = CompositeDisposable()
+    }
+    
+    deinit {
+        disposeBag.dispose()
+    }
+
 }

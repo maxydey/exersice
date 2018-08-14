@@ -107,7 +107,6 @@
 				50EB78892122C094004ED4EC /* AppDelegate.swift */,
 				50EB78A92122C704004ED4EC /* Models */,
 				50EB78AC2122C9D1004ED4EC /* Services */,
-				50EB788B2122C095004ED4EC /* TickersListViewController.swift */,
 				50EB78B52122E81A004ED4EC /* List */,
 				50EB78B62122E824004ED4EC /* Details */,
 				50EB788D2122C095004ED4EC /* Main.storyboard */,
@@ -147,6 +146,7 @@
 		50EB78B52122E81A004ED4EC /* List */ = {
 			isa = PBXGroup;
 			children = (
+				50EB788B2122C095004ED4EC /* TickersListViewController.swift */,
 				50EB78B12122D328004ED4EC /* TickersListViewModel.swift */,
 				50EB78B32122D652004ED4EC /* TickerCell.swift */,
 			);

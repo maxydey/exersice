@@ -15,7 +15,8 @@ enum Error: Swift.Error {
 }
 
 class NetworkService {
-    let provider = MoyaProvider<CoinMarketAPI>()
+//    let provider = MoyaProvider<CoinMarketAPI>()
+    let provider = MoyaProvider<CoinMarketAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
     let jsonDecoder = JSONDecoder()
     let disposeBag = DisposeBag()
     
