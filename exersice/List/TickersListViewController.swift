@@ -39,7 +39,7 @@ class TickersListViewController: UIViewController {
     }
     
     func setupTableView() {
-        viewModel.tickers.asObservable()
+        viewModel.tickers
             .bind(to: tableView.rx.items(cellIdentifier: String(describing: TickerCell.self), cellType: TickerCell.self)) {[unowned self] (row, ticker, cell) in
                 
                 cell.titleLabel.text = ticker.name
@@ -54,12 +54,16 @@ class TickersListViewController: UIViewController {
                     self.viewModel.icon(for: ticker).bind(to: cell.coinIconButton.rx.image()))}
             .disposed(by: viewModel.disposeBag)
         
-        tableView.rx.modelSelected(Ticker.self).bind(to: viewModel.openTickerAction.inputs).disposed(by: viewModel.disposeBag)
+        tableView.rx.modelSelected(Ticker.self)
+            .bind(to: viewModel.openTickerAction.inputs)
+            .disposed(by: viewModel.disposeBag)
         
-        tableView.rx.itemSelected.asObservable().bind { [weak self] (indexPath) in
-            guard let strongSelf = self else { return }
-            strongSelf.tableView.deselectRow(at: indexPath, animated: true)
-            }.disposed(by: viewModel.disposeBag)
+        tableView.rx.itemSelected
+            .asObservable()
+            .bind { [weak self] (indexPath) in
+                guard let strongSelf = self else { return }
+                strongSelf.tableView.deselectRow(at: indexPath, animated: true)}
+            .disposed(by: viewModel.disposeBag)
         
     }
     

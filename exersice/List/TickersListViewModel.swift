@@ -17,15 +17,15 @@ class TickersListViewModel : NSObject {
     let networkService = NetworkService()
     let disposeBag = DisposeBag()
     
-    var tickers = BehaviorSubject<[Ticker]>(value: [])
+    var tickers: Observable<[Ticker]>!
     var globalData: Observable<GlobalData>!
 
-    var loading = BehaviorSubject<Bool>(value: false)
     var title = BehaviorSubject<String>(value: "Tickers")
 
     override init() {
         super.init()
-        self.loadTickers().subscribe().disposed(by: disposeBag)
+        
+        tickers = loadTickers()
         
         globalData = loadGlobalData()
         
@@ -36,8 +36,8 @@ class TickersListViewModel : NSObject {
             .asObservable()
     }
 
-    private func loadTickers() -> Observable<Void> {
-        loading.onNext(true)
+    private func loadTickers() -> Observable<[Ticker]> {
+        
         return networkService.getTickers()
             .catchError{ [weak self] (error) in
                 let emptyBatch = Single.just(Ticker.Batch())
@@ -66,9 +66,7 @@ class TickersListViewModel : NSObject {
                     return false
                 })
             })
-            .do(onNext: { (tickers) in
-                self.tickers.onNext(tickers)
-            }).map{ _ in }
+        
     }
     
     func icon(for ticker: Ticker) -> Observable<UIImage?> {
