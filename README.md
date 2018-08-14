@@ -15,4 +15,5 @@ App is written using  [RxSwift](https://github.com/ReactiveX/RxSwift)
   
 # Licence
 © Max Deygin 2018
+
 The code is under [Mit licence](https://opensource.org/licenses/MIT), use it at your own risk
