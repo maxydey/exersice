@@ -49,7 +49,7 @@ extension CoinMarketAPI: TargetType {
     var task: Task {
         switch self {
         case .getTickers:
-                let parameters = ["convert" : "EUR"] as [String : Any]
+            let parameters = ["convert" : "EUR", "structure" : "array"] as [String : Any]
                 return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
        default:
             return .requestPlain

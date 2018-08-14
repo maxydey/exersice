@@ -83,14 +83,9 @@ extension Ticker {
         init(from decoder:Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             
-            if let dictionary: [String: Ticker] = try? container.decode([String: Ticker].self, forKey: .tickers) {
-                for key in dictionary.keys {
-                    if let ticker = dictionary[key] {
-                        tickers.append(ticker)
-                    }
-                }
+            if let tickersTmp = try? container.decode([Ticker].self, forKey: .tickers) {
+                tickers = tickersTmp
             }
-            
             metadata = try? container.decode(Metadata.self, forKey: .metadata)
 
             if let error = metadata?.error {
