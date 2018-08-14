@@ -13,6 +13,7 @@
 		50EB78912122C096004ED4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50EB78902122C096004ED4EC /* Assets.xcassets */; };
 		50EB78942122C096004ED4EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50EB78922122C096004ED4EC /* LaunchScreen.storyboard */; };
 		50EB789F2122C096004ED4EC /* exersiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB789E2122C096004ED4EC /* exersiceTests.swift */; };
+		50EB78AB2122C718004ED4EC /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB78AA2122C718004ED4EC /* Ticker.swift */; };
 		EA01B238163FE28401A3B452 /* Pods_exersice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF209C71B58C4A992ACA4650 /* Pods_exersice.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		50EB789A2122C096004ED4EC /* exersiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exersiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50EB789E2122C096004ED4EC /* exersiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exersiceTests.swift; sourceTree = "<group>"; };
 		50EB78A02122C096004ED4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50EB78AA2122C718004ED4EC /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		56BD172F3A1059934E3D19DE /* Pods-exersice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exersice.release.xcconfig"; path = "Pods/Target Support Files/Pods-exersice/Pods-exersice.release.xcconfig"; sourceTree = "<group>"; };
 		AF209C71B58C4A992ACA4650 /* Pods_exersice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_exersice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,8 @@
 		50EB78882122C094004ED4EC /* exersice */ = {
 			isa = PBXGroup;
 			children = (
+				50EB78A92122C704004ED4EC /* Models */,
+				50EB78AC2122C9D1004ED4EC /* Services */,
 				50EB78892122C094004ED4EC /* AppDelegate.swift */,
 				50EB788B2122C095004ED4EC /* ViewController.swift */,
 				50EB788D2122C095004ED4EC /* Main.storyboard */,
@@ -109,6 +113,21 @@
 				50EB78A02122C096004ED4EC /* Info.plist */,
 			);
 			path = exersiceTests;
+			sourceTree = "<group>";
+		};
+		50EB78A92122C704004ED4EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50EB78AA2122C718004ED4EC /* Ticker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50EB78AC2122C9D1004ED4EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EC74A5AC588289B521F84B1E /* Pods */ = {
@@ -273,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50EB788C2122C095004ED4EC /* ViewController.swift in Sources */,
+				50EB78AB2122C718004ED4EC /* Ticker.swift in Sources */,
 				50EB788A2122C094004ED4EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
