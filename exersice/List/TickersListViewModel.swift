@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import Action
-
+import Moya
 class TickersListViewModel : NSObject {
  
     @IBOutlet weak var viewController: TickersListViewController!
@@ -29,9 +29,23 @@ class TickersListViewModel : NSObject {
     private func loadTickers() -> Observable<Void> {
         loading.onNext(true)
         return networkService.getTickers()
-            .catchError{ _ in Single.just(Ticker.Batch())
+            .catchError{ [weak self] (error) in
+                let emptyBatch = Single.just(Ticker.Batch())
+                guard let strongSelf = self else {
+                    return emptyBatch
+                }
                 
-//                showError(error)
+                if let err = error as? MoyaError {
+                    switch err {
+                    case .objectMapping(let networkError, _):
+                        if let networkError = networkError as? NetworkError {
+                            strongSelf.showError(networkError)
+                        }
+                    default: break
+                    }
+                }
+                
+                return emptyBatch
             }
             .asObservable()
             .map({ (batch) -> [Ticker] in
@@ -73,10 +87,13 @@ class TickersListViewModel : NSObject {
         return .empty()
     }
     
-    func showError(_ error:Error) {
-        let alertController = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
-        viewController.present(alertController, animated: true, completion: nil)
+    func showError(_ error:NetworkError) {
+        switch error {
+        case .noData(let value):
+            let alertController = UIAlertController(title: value, message: nil, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style:.default , handler:nil))
+            viewController.present(alertController, animated: true, completion: nil)
+        }
     }
-    
 }
 

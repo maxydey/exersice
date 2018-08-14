@@ -89,11 +89,13 @@ extension Ticker {
     struct Batch: Codable {
         
         var tickers: [Ticker] = []
+        var metadata: Metadata?
         
         init() {}
         
         enum CodingKeys: String, CodingKey {
             case tickers = "data"
+            case metadata
         }
         
         init(from decoder:Decoder) throws {
@@ -106,7 +108,23 @@ extension Ticker {
                     }
                 }
             }
+            metadata = try? container.decode(Metadata.self, forKey: .metadata)
+
+            if let error = metadata?.error {
+                throw NetworkError.noData(error)
+            }
         }
+    }
+}
+
+struct Metadata: Codable {
+    
+    var error:String?
+    var timestamp:Date?
+    
+    enum CodingKeys:String, CodingKey {
+        case error
+        case timestamp
     }
 }
 

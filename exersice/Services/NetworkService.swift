@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 import Moya
 
-enum Error: Swift.Error {
-    case noImagePath
+enum NetworkError: Swift.Error {
+    case noData(String)
 }
 
 class NetworkService {
