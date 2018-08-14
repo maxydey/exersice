@@ -1,0 +1,67 @@
+{
+    "data": [
+             {
+             "id": 1,
+             "name": "Bitcoin",
+             "symbol": "BTC",
+             "website_slug": "bitcoin",
+             "rank": 1,
+             "circulating_supply": 17209362.0,
+             "total_supply": 17209362.0,
+             "max_supply": 21000000.0,
+             "quotes": {
+             "USD": {
+             "price": 6089.63075686,
+             "volume_24h": 5218539439.33883,
+             "market_cap": 104798660141.0,
+             "percent_change_1h": 0.57,
+             "percent_change_24h": -2.91,
+             "percent_change_7d": -13.34
+             },
+             "EUR": {
+             "price": 5367.9181677107,
+             "volume_24h": 4600064237.685585,
+             "market_cap": 92378446935.0,
+             "percent_change_1h": 0.57,
+             "percent_change_24h": -2.91,
+             "percent_change_7d": -13.34
+             }
+             },
+             "last_updated": 1534269339
+             },
+             {
+             "id": 1027,
+             "name": "Ethereum",
+             "symbol": "ETH",
+             "website_slug": "ethereum",
+             "rank": 2,
+             "circulating_supply": 101323972.0,
+             "total_supply": 101323972.0,
+             "max_supply": null,
+             "quotes": {
+             "USD": {
+             "price": 258.973869629,
+             "volume_24h": 2032644792.79137,
+             "market_cap": 26240261131.0,
+             "percent_change_1h": 0.39,
+             "percent_change_24h": -11.72,
+             "percent_change_7d": -35.45
+             },
+             "EUR": {
+             "price": 228.2815814699,
+             "volume_24h": 1791745895.1736994,
+             "market_cap": 23130396583.0,
+             "percent_change_1h": 0.39,
+             "percent_change_24h": -11.72,
+             "percent_change_7d": -35.45
+             }
+             },
+             "last_updated": 1534269350
+             }
+             ],
+    "metadata": {
+        "timestamp": 1534268902,
+        "num_cryptocurrencies": 1833,
+        "error": null
+    }
+}

@@ -5,11 +5,19 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'exersice' do
-
-pod 'RxSwift'
-pod 'Action'
-
-#services
-pod 'Moya/RxSwift'
-
+    
+    pod 'RxSwift'
+    pod 'Action'
+    pod 'Moya/RxSwift'
+    
 end
+
+target 'exersiceTests' do
+    
+    pod 'RxNimble'
+    pod 'Quick'
+    
+end
+
+
+

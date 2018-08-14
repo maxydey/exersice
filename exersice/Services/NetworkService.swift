@@ -10,25 +10,32 @@ import Foundation
 import RxSwift
 import Moya
 
+
 enum NetworkError: Swift.Error {
     case noData(String)
 }
 
 class NetworkService {
-    let provider = MoyaProvider<CoinMarketAPI>()
+    let provider:MoyaProvider<CoinMarketAPI>
     let jsonDecoder = JSONDecoder()
     let disposeBag = DisposeBag()
     
-    init() {
+    convenience init() {
+        self.init(testing: false)
+    }
+    init(testing: Bool) {
+        provider = MoyaProvider<CoinMarketAPI>(stubClosure: testing ? MoyaProvider.immediatelyStub : MoyaProvider.neverStub)
         jsonDecoder.dateDecodingStrategy = .secondsSince1970
     }
+
     
     func getTickers() -> Single<Ticker.Batch> {
-        return provider.rx.request(.getTickers)
+        return provider.rx.request(.getTickers(false))
             .filterSuccessfulStatusAndRedirectCodes()
             .map(Ticker.Batch.self, using: jsonDecoder)
     }
     
+        
     func getGlobalData() -> Single<GlobalData> {
         return provider.rx.request(.getGlobalData)
             .filterSuccessfulStatusAndRedirectCodes()
@@ -40,5 +47,13 @@ class NetworkService {
             .filterSuccessfulStatusAndRedirectCodes()
             .mapImage()
     }
+}
 
+internal extension NetworkService {
+    //for tests only
+    func getTickersAndFail() -> Single<Ticker.Batch> {
+        return provider.rx.request(.getTickers(true))
+            .filterSuccessfulStatusAndRedirectCodes()
+            .map(Ticker.Batch.self, using: jsonDecoder)
+    }
 }

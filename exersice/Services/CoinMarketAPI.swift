@@ -11,7 +11,7 @@ import Moya
 
 
 enum CoinMarketAPI {
-    case getTickers
+    case getTickers(Bool)
     case getGlobalData
     case getImage(String)
 
@@ -43,7 +43,17 @@ extension CoinMarketAPI: TargetType {
         }
     }
     var sampleData: Data {
-        return Data()
+        let data:Data
+        switch self {
+        case .getTickers(let fail):
+            
+            try! data = Data.init(contentsOf: URL(fileReferenceLiteralResourceName:fail == true ? "failedTickerData.json" : "sampleTickersData.json"))
+        case .getGlobalData:
+            try! data = Data.init(contentsOf: URL(fileReferenceLiteralResourceName:"sampleGlobalData.json"))
+        case .getImage:
+            try! data = Data.init(contentsOf: URL(fileReferenceLiteralResourceName:"sampleImage.png"))
+        }
+       return data
     }
     
     var task: Task {
