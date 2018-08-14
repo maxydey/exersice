@@ -8,26 +8,6 @@
 
 import Foundation
 
-/*"id": 1,
- "name": "Bitcoin",
- "symbol": "BTC",
- "website_slug": "bitcoin",
- "rank": 1,
- "circulating_supply": 17008162.0,
- "total_supply": 17008162.0,
- "max_supply": 21000000.0,
- "quotes": {
- "USD": {
- "price": 9024.09,
- "volume_24h": 8765400000.0,
- "market_cap": 153483184623.0,
- "percent_change_1h": -2.31,
- "percent_change_24h": -4.18,
- "percent_change_7d": -0.47
- }
- },
- "last_updated": 1525137271*/
-
 struct Quote : Codable {
     
     var price : Double
@@ -53,7 +33,7 @@ struct Ticker: Codable {
     var id : Int = 0
     var name : String
     var symbol : String?
-    var quotes : [Quote]?
+    
     var usdQuote: Quote?
     var eurQuote: Quote?
     
@@ -61,7 +41,13 @@ struct Ticker: Codable {
         case id
         case name
         case symbol
-        case quotes
+        case usdQuote = "USD"
+        case eurQuote = "EUR"
+
+
+    }
+    enum NestedQuotesKeys: String, CodingKey {
+      case quotes
     }
     
     public init(from decoder: Decoder) throws {
@@ -71,16 +57,12 @@ struct Ticker: Codable {
         name = try container.decode(String.self, forKey: .name)
         symbol = try? container.decode(String.self, forKey: .symbol)
         
-        if let dictionary: [String: Quote] = try? container.decode([String: Quote].self, forKey: .quotes) {
-            for key in dictionary.keys {
-                if key == "USD", let quote = dictionary[key] {
-                    usdQuote = quote
-                }
-                if key == "EUR", let quote = dictionary[key] {
-                    eurQuote = quote
-                }
-            }
-        }
+        let rootContainer = try decoder.container(keyedBy: NestedQuotesKeys.self)
+        let dataContainer = try rootContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .quotes)
+
+        usdQuote = try? dataContainer.decode(Quote.self, forKey: .usdQuote)
+        eurQuote = try? dataContainer.decode(Quote.self, forKey: .eurQuote)
+        
     }
 }
 
@@ -108,6 +90,7 @@ extension Ticker {
                     }
                 }
             }
+            
             metadata = try? container.decode(Metadata.self, forKey: .metadata)
 
             if let error = metadata?.error {

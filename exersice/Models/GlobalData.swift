@@ -26,12 +26,9 @@ struct GlobalData: Codable {
     public init(from decoder: Decoder) throws {
 
         let container = try decoder.container(keyedBy: DataKeys.self)
-        let dataContainer =
-            try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
-        self.activeCryptocurrencies = try dataContainer.decode(Int.self, forKey: .activeCryptocurrencies)
-        self.activeMarkets = try dataContainer.decode(Int.self, forKey: .activeMarkets)
-
-
+        let dataContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
+        activeCryptocurrencies = try dataContainer.decode(Int.self, forKey: .activeCryptocurrencies)
+        activeMarkets = try dataContainer.decode(Int.self, forKey: .activeMarkets)
 
     }
 }
