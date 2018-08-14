@@ -18,14 +18,24 @@ class TickersListViewModel : NSObject {
     let disposeBag = DisposeBag()
     
     var tickers = BehaviorSubject<[Ticker]>(value: [])
+    var globalData: Observable<GlobalData>!
+
     var loading = BehaviorSubject<Bool>(value: false)
     var title = BehaviorSubject<String>(value: "Tickers")
 
     override init() {
         super.init()
         self.loadTickers().subscribe().disposed(by: disposeBag)
+        
+        globalData = loadGlobalData()
+        
     }
     
+    private func loadGlobalData() -> Observable<GlobalData> {
+        return networkService.getGlobalData()
+            .asObservable()
+    }
+
     private func loadTickers() -> Observable<Void> {
         loading.onNext(true)
         return networkService.getTickers()

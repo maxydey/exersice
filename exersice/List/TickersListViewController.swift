@@ -14,10 +14,28 @@ class TickersListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var viewModel: TickersListViewModel!
     
+    @IBOutlet weak var cryptocurenciesNumberLabel: UILabel!
+    @IBOutlet weak var marketsNumberLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+
         setupUI()
+        setupTableView()
+    }
+    
+    func  setupUI() {
+        viewModel.title.asObservable().bind(to: self.rx.title).disposed(by:viewModel.disposeBag)
+        
+        viewModel.globalData
+            .map{ "\($0.activeCryptocurrencies)" }
+            .bind(to: cryptocurenciesNumberLabel.rx.text)
+            .disposed(by:viewModel.disposeBag)
+        
+        viewModel.globalData
+            .map{ "\($0.activeMarkets)" }
+            .bind(to: marketsNumberLabel.rx.text)
+            .disposed(by: viewModel.disposeBag)
+        
     }
     
     func setupTableView() {
@@ -45,8 +63,6 @@ class TickersListViewController: UIViewController {
         
     }
     
-    func  setupUI() {
-        viewModel.title.asObservable().bind(to: self.rx.title).disposed(by:viewModel.disposeBag)
-    }
+  
 }
 

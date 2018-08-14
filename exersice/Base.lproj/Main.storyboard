@@ -22,9 +22,50 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-Yv-w7Q">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="fg3-JX-1Ur">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cryptocurrencies:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZH-BY-vTD">
+                                            <rect key="frame" x="15" y="17" width="137" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJK-25-QWn">
+                                            <rect key="frame" x="156" y="27.5" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.16602750615991674" green="0.26140715618869048" blue="0.80008608102798462" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="highlightedColor" red="0.17844289000452207" green="0.25719255736717284" blue="0.80008608102798462" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygS-YQ-Ddg">
+                                            <rect key="frame" x="242" y="26.5" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.16602750615991674" green="0.26140715618869048" blue="0.80008608102798462" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="highlightedColor" red="0.17844289000452207" green="0.25719255736717284" blue="0.80008608102798462" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Markets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPg-ul-TPv">
+                                            <rect key="frame" x="171" y="16" width="67" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="YJK-25-QWn" firstAttribute="leading" secondItem="9ZH-BY-vTD" secondAttribute="trailing" constant="4" id="POD-Xb-nrp"/>
+                                        <constraint firstItem="9ZH-BY-vTD" firstAttribute="centerY" secondItem="fg3-JX-1Ur" secondAttribute="centerY" id="To3-6a-Eai"/>
+                                        <constraint firstItem="wPg-ul-TPv" firstAttribute="centerY" secondItem="fg3-JX-1Ur" secondAttribute="centerY" id="WA3-fZ-Yk3"/>
+                                        <constraint firstItem="ygS-YQ-Ddg" firstAttribute="centerY" secondItem="fg3-JX-1Ur" secondAttribute="centerY" id="Zuc-b9-1l4"/>
+                                        <constraint firstItem="YJK-25-QWn" firstAttribute="centerY" secondItem="fg3-JX-1Ur" secondAttribute="centerY" id="cao-qa-dcX"/>
+                                        <constraint firstItem="wPg-ul-TPv" firstAttribute="leading" secondItem="YJK-25-QWn" secondAttribute="trailing" constant="15" id="jL9-LX-QMd"/>
+                                        <constraint firstItem="9ZH-BY-vTD" firstAttribute="leading" secondItem="fg3-JX-1Ur" secondAttribute="leading" constant="15" id="sLi-W6-Rgu"/>
+                                        <constraint firstItem="ygS-YQ-Ddg" firstAttribute="leading" secondItem="wPg-ul-TPv" secondAttribute="trailing" constant="4" id="tKd-ax-dY5"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TickerCell" rowHeight="82" id="KHB-hX-gl3" customClass="TickerCell" customModule="exersice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="82"/>
+                                        <rect key="frame" x="0.0" y="82" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KHB-hX-gl3" id="oaS-lc-SMB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
@@ -108,6 +149,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Kp-V6-hbi"/>
                     <connections>
+                        <outlet property="cryptocurenciesNumberLabel" destination="YJK-25-QWn" id="Csq-J1-O44"/>
+                        <outlet property="marketsNumberLabel" destination="ygS-YQ-Ddg" id="vdo-oT-yBi"/>
                         <outlet property="tableView" destination="Hgb-Yv-w7Q" id="dci-D4-yCg"/>
                         <outlet property="viewModel" destination="ZaA-d8-wnc" id="gVG-Gw-wdF"/>
                     </connections>

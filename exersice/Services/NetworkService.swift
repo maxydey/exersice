@@ -29,6 +29,12 @@ class NetworkService {
             .map(Ticker.Batch.self, using: jsonDecoder)
     }
     
+    func getGlobalData() -> Single<GlobalData> {
+        return provider.rx.request(.getGlobalData)
+            .filterSuccessfulStatusAndRedirectCodes()
+            .map(GlobalData.self, using: jsonDecoder)
+    }
+    
     func getImage(path: String) -> Single<Image?> {
         return provider.rx.request(.getImage(path))
             .filterSuccessfulStatusAndRedirectCodes()

@@ -12,6 +12,7 @@ import Moya
 
 enum CoinMarketAPI {
     case getTickers
+    case getGlobalData
     case getImage(String)
 
 }
@@ -29,6 +30,8 @@ extension CoinMarketAPI: TargetType {
         switch self {
         case .getTickers:
             return "/ticker"
+        case .getGlobalData:
+            return "/global"
         case .getImage(let path):
             return "/\(path).png"
         }
